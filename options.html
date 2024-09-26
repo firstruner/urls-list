@@ -9,6 +9,9 @@
   <br>
   <label><input type="checkbox" name="openUrlsAlreadyOpened" id="openUrlsAlreadyOpened"> Open URLs which are already opened in other Tabs</label>
   <br>
+  <label>Chemin de sauvegarde <input id="outputSaveFolder" name="outputSaveFolder" type="file" onchange="browseResult(event)" webkitdirectory directory multiple="false" style="display:none" />
+    <button onclick="getElementById('fileselector').click()">browse</button></label>
+  <br>
   <button type="submit">Save</button>
 </form>
 <script src="options.js"></script>
