@@ -1,0 +1,68 @@
+Manifest-Version: 1.0
+
+Name: background.js
+Digest-Algorithms: MD5 SHA1 SHA256
+MD5-Digest: yecdSwFSXY9inyArHh9hew==
+SHA1-Digest: jxMDR5JKt4dtWaXazEVpAoa/0hw=
+SHA256-Digest: Kv61htjmHRKPAb+esPD5XR+npwJnCVV2/uccrd8bl1Y=
+
+Name: manifest.json
+Digest-Algorithms: MD5 SHA1 SHA256
+MD5-Digest: pg6os/4roQTTXnA+gzxcPw==
+SHA1-Digest: fOQGcZr6hz4eyFzFodQwSb27FiQ=
+SHA256-Digest: RUHpTv8n8goNNqxyinu4uIq4bJ97w1hVgmXlFJQyM5c=
+
+Name: options.html
+Digest-Algorithms: MD5 SHA1 SHA256
+MD5-Digest: 6mWAHmof1YPmikPZ55kcXg==
+SHA1-Digest: o67r6I/kzbyMeEOX6xjZqfbl7l8=
+SHA256-Digest: SyT9j0hkHA6JCbZEYW0wVW4fW85Rj+3kK7yKSTDAgIs=
+
+Name: options.js
+Digest-Algorithms: MD5 SHA1 SHA256
+MD5-Digest: F5hvq1wFZnVOHK3s9qrtoA==
+SHA1-Digest: p2FzOMV0aTQ7GD+mqNQa+N5sUe0=
+SHA256-Digest: p6OVT1DyDXeZtzrR0RtxOB3MzR2X7mJuOtiCuMo+BVU=
+
+Name: README.md
+Digest-Algorithms: MD5 SHA1 SHA256
+MD5-Digest: EiD2NikPrr+D6e5i6lOmJg==
+SHA1-Digest: rnWZwSCfBoB6TGAeEuHe51a7BtY=
+SHA256-Digest: ISdcE90u5Fj1bHr3hefcQKqLYHXri33rnzH6XUCYuls=
+
+Name: icons/error.svg
+Digest-Algorithms: MD5 SHA1 SHA256
+MD5-Digest: RoQnW7selG+i1JGO8WaulQ==
+SHA1-Digest: whNk70m4DWh+nXRmdcmK2UzxjWY=
+SHA256-Digest: xeKOzG7q2USGACFol/M3M78Z2aXVDDIHYkUIfUGmUCg=
+
+Name: icons/icon.svg
+Digest-Algorithms: MD5 SHA1 SHA256
+MD5-Digest: II5ghlqsA/gXWSQLtKjWBg==
+SHA1-Digest: hIziUjnN9xwJ27IiYNtC2OfJRmY=
+SHA256-Digest: re1DXUE4qGo7C/pmLwsnZH5nf2sX/e3keuxk1shjsNI=
+
+Name: popup/urls-list.css
+Digest-Algorithms: MD5 SHA1 SHA256
+MD5-Digest: tKuwNQy6qEkMV9LKURkNKw==
+SHA1-Digest: qeayJ6OrjBmFbnq4rCO61rMYzyU=
+SHA256-Digest: O16/+Z3Z5v9+fwiDKa/hSDyZXtr0nyAAFXEGc87uvww=
+
+Name: popup/urls-list.html
+Digest-Algorithms: MD5 SHA1 SHA256
+MD5-Digest: +BrRau9odmPkkMULexpBiQ==
+SHA1-Digest: hYOCauIGCB9HFvvVFl5Id0Ckh6s=
+SHA256-Digest: 9kn3VJgsiYAaf0YJNoXdAKzdxLyaK5oGxIUrJ65LJIk=
+
+Name: popup/urls-list.js
+Digest-Algorithms: MD5 SHA1 SHA256
+MD5-Digest: VXyGCRW5lHcMsmPcrYz+Ug==
+SHA1-Digest: CHPQO3XFCP0d9iwcyOskjvFyyYI=
+SHA256-Digest: QDOL1CNVAOTMZxSloBgozBnf/TNoKfjMt3SjDSa3Rrc=
+
+Name: LICENSE
+Digest-Algorithms: MD5 SHA1 SHA256
+MD5-Digest: cBaAGn7bktReLoXdc7MjRA==
+SHA1-Digest: cupAG1qCm+h3wfHdQpAsQ1dyX+E=
+SHA256-Digest: g5JeOezq3gjftuwoNdY9FEKnANmU3blRMW5sqSrX+s4=
+

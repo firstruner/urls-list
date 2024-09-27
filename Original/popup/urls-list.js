@@ -9,13 +9,6 @@ let urlText = document.querySelector('.urlText');
 let filterInput = document.querySelector('.filterInput');
 let filterWarning = document.querySelector('.filterWarning');
 
-let alwaysOpenAllTabs = false;
-browser.storage.sync.get().then(settings => {
-  alwaysOpenAllTabs = ('openUrlsAlreadyOpened' in settings) ? settings.openUrlsAlreadyOpened : false;
-}, error => {
-  console.log(`Error: ${error}`);
-});
-
 function listTabs() {
   disableFilterMode();
 
@@ -38,7 +31,7 @@ function open() {
     let newUrls = urlText.value.split('\n');
     for (let url of newUrls) {
       // only open if new url is not empty string and is not already opened
-      if (url !== '' && (alwaysOpenAllTabs || currentUrls.indexOf(url) < 0)) {
+      if (url !== '' && currentUrls.indexOf(url) < 0) {
         // prefix "http://" if it is not an url already
         if (url.indexOf('://') < 0) {
           url = 'http://' + url;
@@ -73,20 +66,8 @@ function save() {
   let dateString = [year, month, day, hour, min, sec].join('-');
 
   let dl = document.createElement('a');
-  let pathOutput = "";
 
-  browser.storage.sync.get().then(settings => {
-    let outputSaveFolder = ('outputSaveFolder' in settings)
-      ? settings.openUrlsAlreadyOpened + '\\'
-      : "";
-
-    pathOutput = outputSaveFolder + 'urls-list-' + dateString + '.txt'; // filename
-  }, error => {
-    console.log(`Error: ${error}`);
-  });
-
-  dl.download = pathOutput; // filename
-
+  dl.download = 'urls-list-' + dateString + '.urls'; // filename
   dl.href = window.URL.createObjectURL(
     new Blob([urlText.value], {type: 'text/plain'}) // file content
   );
@@ -94,39 +75,6 @@ function save() {
   dl.style.display = 'none';
   document.body.appendChild(dl);
   dl.click();
-}
-
-async function writeFile() {
-  // Vérifier si l'API est supportée
-  if ('showSaveFilePicker' in window) {
-    try {
-      // Demander à l'utilisateur de choisir un fichier
-      const fileHandle = await window.showSaveFilePicker({
-        suggestedName: 'nouveauFichier.txt',
-        types: [
-          {
-            description: 'Fichiers texte',
-            accept: { 'text/plain': ['.txt'] },
-          },
-        ],
-      });
-
-      // Créer un flux d'écriture dans le fichier
-      const writable = await fileHandle.createWritable();
-
-      // Écrire du texte dans le fichier
-      await writable.write('Ceci est du texte ajouté dans le fichier.');
-
-      // Fermer le flux d'écriture pour enregistrer les modifications
-      await writable.close();
-
-      console.log('Fichier écrit avec succès!');
-    } catch (err) {
-      console.error('Erreur lors de l\'écriture du fichier :', err);
-    }
-  } else {
-    console.log("L'API File System Access n'est pas supportée dans ce navigateur.");
-  }
 }
 
 function sort(desc = false) {
@@ -160,8 +108,8 @@ function enableFilterMode() {
   if (!filterMode) {
     filterBackup = urlText.value;
     urlText.readOnly = true;
-    urlText.classList.add("urlTextFilterMode")
-    filterWarning.classList.remove("hide");
+    urlText.style.backgroundColor = '#ddd';
+    filterWarning.style.display = 'block';
     filterMode = true;
   }
 }
@@ -170,9 +118,9 @@ function disableFilterMode() {
   if (filterMode) {
     urlText.value = filterBackup;
     urlText.readOnly = false;
-    urlText.classList.remove("urlTextFilterMode");
-    filterWarning.classList.add("hide");
-    filterInput.classList.remove("filterInputError");
+    urlText.style.backgroundColor = '#fff';
+    filterWarning.style.display = 'none';
+    filterInput.style.backgroundColor = '#fff';
     filterInput.value = '';
     filterMode = false;
   }
@@ -180,7 +128,7 @@ function disableFilterMode() {
 
 function filter(e) {
   let val = e.target.value;
-  filterInput.classList.remove("filterInputError");
+  filterInput.style.backgroundColor = '#fff';
   if (val !== '') {
     enableFilterMode();
     try {
@@ -195,7 +143,7 @@ function filter(e) {
       }
       urlText.value = filteredUrls.join('\n') + '\n';
     } catch (ex) {
-      filterInput.classList.add("filterInputError");
+      filterInput.style.backgroundColor = '#fbb';
     }
   } else {
     disableFilterMode();

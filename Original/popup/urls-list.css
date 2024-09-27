@@ -1,0 +1,51 @@
+html, body {
+  width: 350px;
+}
+
+.panel {
+  width: 100%;
+}
+
+.filterBox {
+  padding-left: 6px;
+  padding-top: 10px;
+}
+
+.sortButtons {
+  float: right;
+  padding-right: 6px;
+}
+
+.filterInput {
+  width: 150px;
+}
+
+.filterWarning {
+  background-color: orange;
+  text-align: center;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  display: none;
+}
+
+.urlText {
+  height: 400px;
+  margin-top: -1px;
+  resize: none;
+  white-space: pre;
+  width: 100%;
+}
+
+.buttonRow {
+  padding: 5px;
+  text-align: center;
+  width: 100%;
+}
+
+.buttonRow > button {
+  margin: 5px;
+}
+
+.hide {
+  display: none;
+}
